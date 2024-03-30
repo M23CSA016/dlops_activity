@@ -29,6 +29,10 @@ def analyze_data(data):
             plt.ylabel('Frequency')
             plt.show()
         
+        # Print missing values
+        missing = data.isnull().sum()
+        print(f"Missing values: {missing}")
+        
         # Plot bar plot for the class label (string type)
         class_label_counts = data['Class'].value_counts()
         class_label_counts.plot(kind='bar')
